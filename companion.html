@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companion - MVP Replica</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Configuration for Fonts and Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Custom colors based on design inspiration
+                        'brand-brown': '#3F2305', // Dark brown/orange for typography
+                        'brand-yellow': '#FDE047', // Yellow for highlights
+                        'brand-yellow-light': '#FEF08A', // Lighter yellow for alternating rows
+                    },
+                    fontFamily: {
+                        // Using system fonts for a clean, modern look
+                        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Minimal custom styles for smooth scrolling and base text color */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            color: #3F2305; /* brand-brown */
+            background-color: #FFFFFF;
+        }
+        /* Utility for the vertical image aspect ratio if needed */
+        .vertical-image {
+            aspect-ratio: 3/4;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 
+      1. NAVBAR SECTION
+      - Sticky positioning
+      - Minimal menu items
+      - Highlighted Pre-order button
+    -->
+    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Brand Name (Optional based on screenshots, keeping minimal text) -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold tracking-tight text-brand-brown hover:opacity-80 transition-opacity">Companion</a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-lg font-medium text-brand-brown hover:text-brand-brown/70 transition-colors">About</a>
+                    <a href="#functions" class="text-lg font-medium text-brand-brown hover:text-brand-brown/70 transition-colors">Functions</a>
+                    <a href="#advantages" class="text-lg font-medium text-brand-brown hover:text-brand-brown/70 transition-colors">Advantages</a>
+                    <a href="#specifications" class="text-lg font-medium text-brand-brown hover:text-brand-brown/70 transition-colors">Specifications</a>
+                </div>
+
+                <!-- Pre-order Button -->
+                <div class="flex items-center">
+                    <a href="#" class="bg-brand-yellow text-brand-brown px-6 py-2 rounded-full font-bold text-lg hover:bg-yellow-400 transition-colors shadow-sm hover:shadow-md">
+                        Pre-order
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 
+      2. HERO SECTION
+      - Large bold typography
+      - Centered vertical image
+      - Centered text
+    -->
+    <section id="about" class="min-h-screen flex flex-col justify-center items-center pt-24 pb-12 px-4 text-center">
+        <div class="max-w-4xl mx-auto space-y-8">
+            <!-- Headings -->
+            <div class="space-y-2 animate-fade-in-up">
+                <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight leading-tight">
+                    Feeling lonely?
+                </h1>
+                <p class="text-3xl md:text-5xl font-semibold opacity-90">
+                    Your words unheard?
+                </p>
+            </div>
+
+            <!-- Centered Vertical Image -->
+            <div class="relative w-full max-w-sm mx-auto mt-12 group cursor-pointer">
+                <div class="absolute inset-0 bg-brand-yellow rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300 -z-10"></div>
+                <img 
+                    src="https://picsum.photos/600/800?random=1" 
+                    alt="Companion Device" 
+                    class="rounded-2xl shadow-xl w-full vertical-image transform group-hover:-translate-y-2 transition-transform duration-300"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+      3. FEATURE SECTION ("Listen")
+      - Big bold heading
+      - Chat bubble UI
+    -->
+    <section id="functions" class="py-24 px-4 bg-white">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            
+            <!-- Text Content -->
+            <div class="space-y-6">
+                <h2 class="text-6xl font-bold text-brand-brown">Listen</h2>
+                <p class="text-xl leading-relaxed opacity-80 max-w-md">
+                    The Companion actively listens and analyzes your words, tone of voice, and even pauses to truly understand your emotional state. It's not just hearing; it's understanding.
+                </p>
+            </div>
+
+            <!-- Chat Bubble UI -->
+            <div class="flex flex-col space-y-6 w-full max-w-md mx-auto md:ml-auto">
+                <!-- Message 1 (Left) -->
+                <div class="self-start bg-gray-100 p-6 rounded-2xl rounded-tl-none shadow-sm max-w-[90%] transform hover:scale-105 transition-transform duration-300">
+                    <p class="text-lg text-brand-brown">You're right... I often doubt. I want someone to confidently tell me.</p>
+                </div>
+
+                <!-- Message 2 (Right) -->
+                <div class="self-end bg-brand-yellow/30 p-6 rounded-2xl rounded-tr-none shadow-sm max-w-[90%] transform hover:scale-105 transition-transform duration-300">
+                    <p class="text-lg text-brand-brown">What is closer now. You feel it subtly, you are just afraid to trust yourself.</p>
+                </div>
+
+                <!-- Message 3 (Right) -->
+                <div class="self-end bg-brand-yellow p-6 rounded-2xl rounded-tr-none shadow-md max-w-[90%] transform hover:scale-105 transition-transform duration-300">
+                    <p class="text-lg font-medium text-brand-brown">I am close. But your voice is more important. Take a step - and it will grow stronger.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 
+      4. "WHY A COMPANION?" SECTION
+      - Stacked rows
+      - Alternating highlights
+      - Rounded corners
+    -->
+    <section id="advantages" class="py-24 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl md:text-7xl font-bold text-center mb-16 text-brand-brown">
+                Why a Companion?
+            </h2>
+
+            <div class="space-y-4">
+                <!-- Row 1: Empathy (Highlighted) -->
+                <div class="group flex items-center justify-between p-8 md:p-12 bg-brand-yellow rounded-3xl transition-all duration-300 hover:shadow-lg">
+                    <span class="text-xl md:text-2xl font-bold opacity-60">01</span>
+                    <h3 class="text-4xl md:text-6xl font-bold text-brand-brown flex-1 text-center group-hover:scale-105 transition-transform">Empathy</h3>
+                    <div class="w-8 md:w-12"></div> <!-- Spacer for visual balance -->
+                </div>
+
+                <!-- Row 2: Personalization (White) -->
+                <div class="group flex items-center justify-between p-8 md:p-12 bg-white border-2 border-brand-yellow/20 rounded-3xl transition-all duration-300 hover:border-brand-yellow hover:shadow-lg">
+                    <span class="text-xl md:text-2xl font-bold opacity-60">02</span>
+                    <h3 class="text-4xl md:text-6xl font-bold text-brand-brown flex-1 text-center group-hover:scale-105 transition-transform">Personalization</h3>
+                    <div class="w-8 md:w-12"></div>
+                </div>
+
+                <!-- Row 3: Availability (Highlighted) -->
+                <div class="group flex items-center justify-between p-8 md:p-12 bg-brand-yellow rounded-3xl transition-all duration-300 hover:shadow-lg">
+                    <span class="text-xl md:text-2xl font-bold opacity-60">03</span>
+                    <h3 class="text-4xl md:text-6xl font-bold text-brand-brown flex-1 text-center group-hover:scale-105 transition-transform">Availability</h3>
+                    <div class="w-8 md:w-12"></div>
+                </div>
+
+                <!-- Row 4: Confidentiality (White) -->
+                <div class="group flex items-center justify-between p-8 md:p-12 bg-white border-2 border-brand-yellow/20 rounded-3xl transition-all duration-300 hover:border-brand-yellow hover:shadow-lg">
+                    <span class="text-xl md:text-2xl font-bold opacity-60">04</span>
+                    <div class="flex-1 text-center">
+                        <h3 class="text-4xl md:text-6xl font-bold text-brand-brown group-hover:scale-105 transition-transform inline-block">Confidentiality</h3>
+                        <p class="mt-4 text-lg opacity-70 max-w-2xl mx-auto hidden md:block">
+                            All your conversations with your device are processed locally or using advanced encryption methods.
+                        </p>
+                    </div>
+                    <div class="w-8 md:w-12"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Spacer -->
+    <footer class="py-12 text-center opacity-50">
+        <p>&copy; 2024 Companion Project. All rights reserved.</p>
+    </footer>
+
+    <!-- Minimal JS for simple interactions (only if needed, keeping it clean) -->
+    <script>
+        // Simple fade-in effect on load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('opacity-100');
+        });
+    </script>
+</body>
+</html>
