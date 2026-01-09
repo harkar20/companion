@@ -1,4 +1,4 @@
-# Companion – Frontend MVP
+# Companion
 
 This project is a frontend-only MVP replica of a modern product landing page.
 It focuses on layout, typography, responsiveness, and clean UI using HTML and Tailwind CSS.
