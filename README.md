@@ -16,5 +16,3 @@ It focuses on layout, typography, responsiveness, and clean UI using HTML and Ta
 ## Live Demo
 <https://696143e1e67e822f9f7f96a0--companiontask.netlify.app/>
 
-## Notes
-This is a static MVP built for evaluation purposes.
